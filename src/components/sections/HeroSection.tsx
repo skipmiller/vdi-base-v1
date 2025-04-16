@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { FloatingFrame } from "@/components/ui/floating-frame";
 import { FloatingImage } from "@/components/ui/floating-image";
@@ -28,9 +27,6 @@ export const HeroSection = () => {
             </h1>
             <p className="text-xl text-gray-600 mb-4">
               Let's plan the liberation of your employees, executives, and support staff from the tyranny of virtual desktop (VDI) oppression... together.
-            </p>
-            <p className="text-xl text-gray-600 italic mb-8">
-              Sure feels good to have a plan...
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button className="text-white bg-vdi-medium hover:bg-vdi-dark">
