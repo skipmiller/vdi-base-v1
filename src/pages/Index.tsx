@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { FeatureCard } from "@/components/ui/feature-card";
 import { FloatingFrame } from "@/components/ui/floating-frame";
@@ -29,15 +30,18 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                Be the Hero: <br />
-                Start your AI powered <span className="text-vdi-dark">"Desktop Revolution"</span>
+                Be the Hero. <br />
+                Start an AI <span className="text-vdi-dark">Desktop Revolution</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8">
-                Imagine having a plan that would liberate your employees, executives, and support staff from the tyranny of virtual desktop oppression. Viva la (virtual desktop) revolución!
+              <p className="text-xl text-gray-600 mb-4">
+                Let's plan the liberation of your employees, executives, and support staff from the tyranny of virtual desktop oppression.
+              </p>
+              <p className="text-xl text-gray-600 italic mb-8">
+                Viva la (virtual desktop) revolución!
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="text-white bg-vdi-medium hover:bg-vdi-dark">
-                  Start My Plan
+                  Book a Consultation
                 </Button>
                 <Button variant="outline" className="border-vdi-light text-vdi-dark hover:bg-vdi-lightest/10">
                   Learn More
@@ -47,15 +51,15 @@ const Index = () => {
             <div className="relative">
               <div className="relative h-[480px]">
                 <FloatingImage 
-                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800"
-                  alt="VDI Dashboard Interface"
-                  className="absolute z-20 top-0 right-0 w-3/4 shadow-xl float-animation"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800"
+                  alt="Windows 11 Start Menu & UX Features"
+                  className="absolute z-20 top-0 right-0 w-3/4 shadow-xl float-animation rounded-xl"
                 />
-                <FloatingFrame className="absolute z-10 bottom-4 left-0 w-3/5 p-6 float-animation" style={{ animationDelay: "1.5s" }}>
-                  <h3 className="text-lg font-medium text-vdi-dark mb-2">Seamless User Experience</h3>
-                  <p className="text-gray-600 mb-4">Virtual desktops with native performance and accessibility from any device.</p>
+                <FloatingFrame className="absolute z-10 bottom-4 left-0 w-3/5 p-6 float-animation backdrop-blur-md bg-white/80" style={{ animationDelay: "1.5s" }}>
+                  <h3 className="text-lg font-medium text-vdi-dark mb-2">Latest Windows 11 UX Features (2024-2025)</h3>
+                  <p className="text-gray-600 mb-4">Centered transparent Start Menu with beautiful nature-inspired backgrounds and color matching.</p>
                   <div className="flex items-center text-vdi-medium">
-                    <span className="mr-2">Explore features</span>
+                    <span className="mr-2">See more features</span>
                     <ArrowRight size={16} />
                   </div>
                 </FloatingFrame>
