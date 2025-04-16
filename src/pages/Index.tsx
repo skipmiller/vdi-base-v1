@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { FeatureCard } from "@/components/ui/feature-card";
 import { FloatingFrame } from "@/components/ui/floating-frame";
@@ -31,10 +30,10 @@ const Index = () => {
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
                 Be the Hero. <br />
-                Lead an AI Powered <span className="text-vdi-dark">VDI Desktop Revolution</span>
+                Lead an AI Powered <span className="text-vdi-dark">Desktop Revolution</span>
               </h1>
               <p className="text-xl text-gray-600 mb-4">
-                Let's plan the liberation of your employees, executives, and support staff from the tyranny of virtual desktop oppression.
+                Let's plan the liberation of your employees, executives, and support staff from the tyranny of virtual desktop (VDI) oppression... together.
               </p>
               <p className="text-xl text-gray-600 italic mb-8">
                 Sure feels good to have a plan...
