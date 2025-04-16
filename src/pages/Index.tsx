@@ -31,13 +31,13 @@ const Index = () => {
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
                 Be the Hero. <br />
-                Start an AI <span className="text-vdi-dark">Desktop Revolution</span>
+                Lead an AI Powered <span className="text-vdi-dark">VDI Desktop Revolution</span>
               </h1>
               <p className="text-xl text-gray-600 mb-4">
                 Let's plan the liberation of your employees, executives, and support staff from the tyranny of virtual desktop oppression.
               </p>
               <p className="text-xl text-gray-600 italic mb-8">
-                Viva la (virtual desktop) revolución!
+                Sure feels good to have a plan...
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="text-white bg-vdi-medium hover:bg-vdi-dark">
