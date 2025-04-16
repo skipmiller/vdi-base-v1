@@ -29,10 +29,11 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                Be the Hero. <br />Start a <span className="text-vdi-dark">Desktop Revolution</span>
+                Be the Hero: <br />
+                Start your AI powered <span className="text-vdi-dark">"Desktop Revolution"</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                Imagine the perfect plan that could liberate your employees, executives, and support staff from the tyranny of virtual desktop oppression.
+                Imagine having a plan that would liberate your employees, executives, and support staff from the tyranny of virtual desktop oppression. Viva la (virtual desktop) revolución!
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="text-white bg-vdi-medium hover:bg-vdi-dark">
