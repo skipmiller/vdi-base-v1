@@ -1,53 +1,73 @@
 
-import React, { useRef } from "react";
+import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
-import { ProjectHero } from "@/components/projects/ProjectHero";
-import { ProjectNavigation } from "@/components/projects/ProjectNavigation";
-import { ProjectSection } from "@/components/projects/ProjectSection";
+import { ProjectsHero } from "@/components/projects/ProjectsHero";
+import { FeaturedCaseStudy } from "@/components/projects/FeaturedCaseStudy";
+import { ProjectsGallery } from "@/components/projects/ProjectsGallery";
+import { ProjectTypesList } from "@/components/projects/ProjectTypesList";
+import { ProjectLightbox } from "@/components/projects/ProjectLightbox";
+import { ProjectCTA } from "@/components/projects/ProjectCTA";
 import { FooterSection } from "@/components/sections/FooterSection";
-import { projectsData } from "@/data/projectsData";
+import { featuredProject, recentProjects } from "@/data/projectsData";
+import { Project } from "@/types/project";
 
 const Projects = () => {
-  const projectRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
-  const scrollToProject = (id: string) => {
-    if (projectRefs.current[id]) {
-      projectRefs.current[id]?.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+  const openLightbox = (project: Project) => {
+    setSelectedProject(project);
+    setLightboxOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    document.body.style.overflow = "auto";
+  };
+
+  const navigateProject = (direction: "prev" | "next") => {
+    if (!selectedProject) return;
+    
+    const currentIndex = recentProjects.findIndex(p => p.id === selectedProject.id);
+    if (currentIndex === -1) return;
+    
+    let newIndex;
+    if (direction === "prev") {
+      newIndex = currentIndex === 0 ? recentProjects.length - 1 : currentIndex - 1;
+    } else {
+      newIndex = currentIndex === recentProjects.length - 1 ? 0 : currentIndex + 1;
     }
+    
+    setSelectedProject(recentProjects[newIndex]);
   };
 
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
       
-      {/* Hero section for Reference project */}
-      <ProjectHero
-        ref={el => projectRefs.current['reference'] = el}
-        project={projectsData[0]}
+      <ProjectsHero />
+      
+      <FeaturedCaseStudy project={featuredProject} />
+      
+      <ProjectsGallery 
+        projects={recentProjects} 
+        onProjectClick={openLightbox}
       />
       
-      {/* Project navigation */}
-      <ProjectNavigation 
-        projects={projectsData} 
-        onProjectClick={scrollToProject} 
-      />
+      <ProjectTypesList />
       
-      {/* Individual project sections */}
-      {projectsData.map((project, index) => (
-        index > 0 && (
-          <ProjectSection
-            key={project.id}
-            ref={el => projectRefs.current[project.id] = el}
-            project={project}
-            imagePosition={index % 2 === 0 ? "left" : "right"}
-          />
-        )
-      ))}
+      <ProjectCTA />
       
       <FooterSection />
+      
+      {lightboxOpen && selectedProject && (
+        <ProjectLightbox 
+          project={selectedProject}
+          onClose={closeLightbox}
+          onNavigate={navigateProject}
+        />
+      )}
     </div>
   );
 };
