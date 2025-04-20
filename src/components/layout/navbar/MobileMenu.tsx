@@ -15,6 +15,9 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
       <NavLink href="#services">
         <div className="block py-2">Services</div>
       </NavLink>
+      <NavLink href="/projects">
+        <div className="block py-2">Projects</div>
+      </NavLink>
       <NavLink href="#benefits">
         <div className="block py-2">Benefits</div>
       </NavLink>
