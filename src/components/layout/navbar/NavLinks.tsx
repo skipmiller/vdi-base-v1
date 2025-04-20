@@ -1,6 +1,5 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
 
 interface NavLinkProps {
   href: string;
@@ -9,16 +8,15 @@ interface NavLinkProps {
 
 export const NavLink = ({ href, children }: NavLinkProps) => {
   return (
-    <Link to={href} className="text-gray-700 hover:text-vdi-medium transition-colors">
+    <a href={href} className="text-gray-700 hover:text-vdi-medium transition-colors">
       {children}
-    </Link>
+    </a>
   );
 };
 
 const NavLinks = () => {
   return (
     <>
-      <NavLink href="/projects">Projects</NavLink>
       <NavLink href="#services">Services</NavLink>
       <NavLink href="#benefits">Benefits</NavLink>
       <NavLink href="#testimonials">Testimonials</NavLink>
